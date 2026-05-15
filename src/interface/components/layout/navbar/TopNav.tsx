@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { CloseIcon, DefaultLogo, FolderIcon, HomeIcon, MenuIcon, NewspaperIcon, UserIcon } from "./icons";
+import { CloseIcon, FolderIcon, HomeIcon, MenuIcon, NewspaperIcon, UserIcon } from "./icons";
 import { spring, fastSpring } from "@/src/lib/animations/spring";
 import NavItem from "./NavItem";
 import { DEFAULT_ITEMS } from "./nav-data";
@@ -13,8 +13,8 @@ export default function TopNav({
   logoAlt = "Brand Logo",
   items = DEFAULT_ITEMS,
 }: TopNavProps) {
-  const [hovered, setHovered]       = useState(false);
-  const [isMobile, setIsMobile]     = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +39,7 @@ export default function TopNav({
   const showLabels = isMobile ? mobileOpen : hovered;
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 flex justify-center items-start pt-4 pointer-events-none px-4 md:px-0">
+    <nav className="fixed bottom-10 inset-x-0 z-50 flex justify-center items-end pointer-events-none px-4 md:px-0">
       <motion.div
         ref={navRef}
         layout
@@ -55,9 +55,9 @@ export default function TopNav({
         animate={{
           borderRadius: isMobile ? 30 : 100,
         }}
-        onMouseEnter={() => { if (!isMobile) setHovered(true);  }}
+        onMouseEnter={() => { if (!isMobile) setHovered(true); }}
         onMouseLeave={() => { if (!isMobile) setHovered(false); }}
-        onClick={()      => { if (isMobile)  setMobileOpen(v => !v); }}
+        onClick={() => { if (isMobile) setMobileOpen(v => !v); }}
       >
 
         {!isMobile && (
@@ -66,11 +66,11 @@ export default function TopNav({
             transition={spring}
             className="flex flex-row items-center"
             animate={{
-              gap:           hovered ? 50 : 30,
-              paddingTop:    hovered ? 10 : 8,
+              gap: hovered ? 50 : 30,
+              paddingTop: hovered ? 10 : 8,
               paddingBottom: hovered ? 10 : 8,
-              paddingLeft:   20,
-              paddingRight:  20,
+              paddingLeft: 20,
+              paddingRight: 20,
             }}
           >
             <motion.div
@@ -88,7 +88,9 @@ export default function TopNav({
                   className="object-contain w-full h-full"
                 />
               ) : (
-                <DefaultLogo />
+                <div>
+                  {/* <DefaultLogo /> */}
+                </div>
               )}
             </motion.div>
 
@@ -106,11 +108,11 @@ export default function TopNav({
             transition={spring}
             className="flex flex-col w-full"
             animate={{
-              paddingTop:    mobileOpen ? 10 : 12,
+              paddingTop: mobileOpen ? 10 : 12,
               paddingBottom: mobileOpen ? 15 : 10,
-              paddingLeft:   20,
-              paddingRight:  20,
-              gap:           mobileOpen ? 15 : 0,
+              paddingLeft: 20,
+              paddingRight: 20,
+              gap: mobileOpen ? 15 : 0,
             }}
           >
             <div className="flex flex-row items-center justify-between w-full cursor-pointer">
@@ -121,7 +123,9 @@ export default function TopNav({
                 {logoSrc ? (
                   <Image src={logoSrc} alt={logoAlt} width={23} height={23} className="object-contain w-full h-full" />
                 ) : (
-                  <DefaultLogo />
+                  <div>
+                    {/* <DefaultLogo /> */}
+                  </div>
                 )}
               </motion.div>
 

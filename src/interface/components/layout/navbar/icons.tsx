@@ -41,14 +41,14 @@ export const CloseIcon = () => (
   </svg>
 );
 
-export const DefaultLogo = () => (
-  <svg viewBox="0 0 24 30" className="w-full h-full" fill="none">
-    <path d="M12 0L24 10L12 30L0 10L12 0Z" fill="url(#logoGrad)" />
-    <defs>
-      <linearGradient id="logoGrad" x1="0" y1="0" x2="24" y2="30" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#a78bfa" />
-        <stop offset="100%" stopColor="#6366f1" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+// export const DefaultLogo = () => (
+//   <svg viewBox="0 0 24 30" className="w-full h-full" fill="none">
+//     <path d="M12 0L24 10L12 30L0 10L12 0Z" fill="url(#logoGrad)" />
+//     <defs>
+//       <linearGradient id="logoGrad" x1="0" y1="0" x2="24" y2="30" gradientUnits="userSpaceOnUse">
+//         <stop offset="0%" stopColor="#a78bfa" />
+//         <stop offset="100%" stopColor="#6366f1" />
+//       </linearGradient>
+//     </defs>
+//   </svg>
+// );

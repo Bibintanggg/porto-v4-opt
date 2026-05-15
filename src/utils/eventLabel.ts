@@ -1,3 +1,4 @@
+import { GithubEvent } from "../interface/components/ui/github/types/github-event";
 
 export default function eventLabel(e: GithubEvent): { icon: string; text: string; color: string; bg: string } {
   const repo = e.repo.name.split("/")[1] ?? e.repo.name;

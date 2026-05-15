@@ -1,4 +1,4 @@
-interface GithubRepo {
+export interface GithubRepo {
   id: number;
   name: string;
   description: string | null;

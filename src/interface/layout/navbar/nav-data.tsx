@@ -1,4 +1,5 @@
 import { FolderIcon, HomeIcon, NewspaperIcon, UserIcon } from "./icons";
+import { NavLinkItem } from "./types";
 
 export const DEFAULT_ITEMS: NavLinkItem[] = [
     { label: "Home", icon: <HomeIcon />, href: "/" },

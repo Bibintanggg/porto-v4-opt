@@ -8,6 +8,7 @@ export const LANG_COLOR: Record<string, string> = {
 
 export const TECH = [
   "Next.js", "TypeScript", "React", "Golang", "Tailwind CSS",
-  "Supabase", "Redux", "Shadcn UI", "Firebase", "Kotlin",
-  "Flutter", "Rust", "Vercel", "Material UI", "PostgreSQL",
+  "Supabase", "Shadcn UI",, "Vercel", "PostgreSQL", "MySQL",
+  "Laravel", "Docker", "Postman", "Git", "GitHub", "Figma",
+  "Ngrok"
 ];

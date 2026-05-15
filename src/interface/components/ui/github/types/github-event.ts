@@ -1,4 +1,4 @@
-interface GithubEvent {
+export interface GithubEvent {
   id: string;
   type: string;
   repo: { name: string };
@@ -9,5 +9,6 @@ interface GithubEvent {
     action?: string;
     pull_request?: { title: string };
     forkee?: { full_name: string };
+    head?: string;
   };
 }

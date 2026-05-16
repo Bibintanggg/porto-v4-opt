@@ -7,6 +7,7 @@ import { CloseIcon, FolderIcon, HomeIcon, MenuIcon, NewspaperIcon, UserIcon } fr
 import { spring, fastSpring } from "@/src/lib/animations/spring";
 import NavItem from "./NavItem";
 import { DEFAULT_ITEMS } from "./nav-data";
+import { TopNavProps } from "./types";
 
 export default function TopNav({
   logoSrc,

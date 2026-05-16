@@ -240,26 +240,24 @@ export default function AboutContent() {
               Let's connect
             </p>
             <h2 className="text-[22px] font-normal text-stone-800 dark:text-stone-100 leading-snug max-w-md">
-              {/* Ganti dengan kalimat CTA kamu */}
-              Punya project menarik atau sekadar mau ngobrol soal tech?
+              Have an interesting project or just want to chat about tech?
             </h2>
             <p className="text-[13px] font-light text-stone-400 dark:text-stone-600 max-w-sm">
-              {/* Ganti dengan email kamu */}
               Reach me at{" "}
               <a
-                href="mailto:your@email.com"
+                href="mailto:bintangyuda08@gmail.com"
                 className="text-stone-600 dark:text-stone-400 underline underline-offset-2 hover:text-stone-900 dark:hover:text-stone-200 transition-colors"
               >
-                your@email.com
+                bintangyuda08@gmail.com
               </a>
             </p>
             <div className="flex flex-wrap justify-center gap-3 mt-1">
               {[
-                { label: "GitHub", href: "https://github.com/yourusername" },
-                { label: "Twitter", href: "https://x.com/yourusername" },
+                { label: "GitHub", href: "https://github.com/Bibintanggg" },
+                { label: "Twitter", href: "https://x.com/Binnt8_" },
                 {
                   label: "LinkedIn",
-                  href: "https://linkedin.com/in/yourusername",
+                  href: "https://linkedin.com/in/bintang-yudha-putra-purnomo",
                 },
               ].map((s) => (
                 <a
@@ -285,7 +283,7 @@ export default function AboutContent() {
             <div className="flex items-center gap-6">
               {[
                 { label: "GitHub", href: "https://github.com/Bibintanggg" },
-                { label: "Twitter", href: "https://x.com/yourusername" },
+                { label: "Twitter", href: "https://x.com/Binnt8_" },
                 { label: "Email", href: "mailto:bintangyuda08@gmail.com" },
               ].map((s) => (
                 <a

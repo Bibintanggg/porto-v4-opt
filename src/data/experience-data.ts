@@ -1,19 +1,18 @@
-
 export const experiences = [
   {
-    role: "Full Stack Developer",           // jabatan / role kamu
-    company: "Company / Project Name",      // nama perusahaan atau project
-    period: "Jan 2024 — Present",           // periode kerja
-    type: "Full-time",                      // Full-time / Freelance / Contract / Internship
+    role: "Full Web Stack Developer",
+    company: "INDI Technology",
+    period: "July 2025 — October 2025",
+    type: "Internship",
     desc: "Deskripsikan apa yang kamu kerjakan di sini. Teknologi apa yang dipakai, kontribusi apa yang kamu kasih, dan hasil yang dicapai.",
     tags: ["Next.js", "TypeScript", "PostgreSQL"],
   },
   {
     role: "Frontend Developer",
-    company: "Another Company / Project",
-    period: "Jun 2023 — Dec 2023",
-    type: "Freelance",
-    desc: "Deskripsikan project atau pekerjaan ini. Bisa tentang scope-nya, stack yang dipakai, atau hal yang kamu pelajari.",
-    tags: ["React", "Tailwind CSS", "Node.js"],
+    company: "Bank Indonesia",
+    period: "May 2026 — Juli 2026",
+    type: "Internship",
+    desc: "Assisted administrative and document management tasks in a professional working environment while improving communication, organization, and teamwork skills.",
+    tags: ["React", "Tailwind CSS", "Git"],
   },
 ];

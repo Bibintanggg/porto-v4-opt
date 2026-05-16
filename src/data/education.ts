@@ -1,8 +1,8 @@
 export const education = [
   {
-    degree: "S1 Matematika",                // jurusan / degree kamu
-    school: "Nama Universitas",             // nama kampus
-    period: "2024 — Present",
-    desc: "Deskripsi singkat tentang studi kamu, mata kuliah relevan, atau pencapaian akademik.",
+    degree: "Software Engineering",
+    school: "SMKN 46 Jakarta",
+    period: "2023 - 2026",
+    desc: "Started my journey in programming through software engineering studies, focusing on web development, UI/UX, and modern application building.",
   },
 ];

@@ -111,10 +111,8 @@ export default function HomeContent() {
 
           <section className="mt-12 mb-14 flex flex-col gap-6">
 
-            {/* Avatar + Name — flex col, centered */}
             <div className="flex flex-col items-center gap-4">
 
-              {/* Avatar */}
               <div className="intro-avatar relative flex-shrink-0 opacity-0">
                 <div
                   className="absolute inset-[-6px] rounded-full border border-stone-300/40 dark:border-stone-700/40"
@@ -130,7 +128,6 @@ export default function HomeContent() {
                   />
                 </div>
               </div>
-              {/* Name + status + button */}
               <div className="intro-name opacity-0 flex flex-col items-center gap-1.5">
                 <h1 className="text-[24px] font-normal tracking-[-0.01em] text-stone-900 dark:text-stone-50 leading-tight text-center">
                   Bintang Yudha Putra Purnomo
@@ -145,7 +142,6 @@ export default function HomeContent() {
                   </span>
                 </div>
 
-                {/* View Profile Button */}
                 <button
                   onClick={() => setShowProfile(true)}
                   className="mt-1 text-[9px] tracking-[0.28em] uppercase text-stone-400 dark:text-stone-600 border border-stone-200 dark:border-stone-800 px-3 py-1.5 rounded-md hover:text-stone-700 dark:hover:text-stone-400 hover:border-stone-300 dark:hover:border-stone-700 transition-all duration-200"
@@ -157,9 +153,9 @@ export default function HomeContent() {
             </div>
 
             <p className="intro-bio text-center mx-auto text-[13.5px] font-light leading-[1.9] text-stone-500 dark:text-stone-400 max-w-2xl opacity-0">
-              I'm a Fullstack Web Developer from DKI Jakarta | East Jakarta, Indonesia, 18 years old, studying Mathematics.
+              I'm a Fullstack Web Developer from DKI Jakarta | East Jakarta, Indonesia, 18 years old, majoring Software Engineering.
               I specialise in building modern web solutions that balance performance, functionality,
-              and great user experience. Full stack at heart, but with a love for polished frontends.
+              and great user experience. Fullstack at heart, but with a love for polished frontends.
             </p>
 
             <div className="flex flex-wrap gap-2.5 mx-auto justify-center">

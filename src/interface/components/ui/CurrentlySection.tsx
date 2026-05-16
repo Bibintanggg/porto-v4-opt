@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const GITHUB_USER = "Bibintanggg";
 
-// ─── Types ────────────────────────────────────────────────────────────
 interface GithubRepo {
   id: number;
   name: string;
@@ -27,7 +26,6 @@ interface CurrentlyItem {
   meta?: string;
 }
 
-// ─── Helper: relative time ────────────────────────────────────────────
 function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
   const days = Math.floor(diff / 86400000);
@@ -38,7 +36,6 @@ function timeAgo(dateStr: string): string {
   return `updated ${Math.floor(days / 30)}mo ago`;
 }
 
-// ─── Dot component ────────────────────────────────────────────────────
 function Dot({ color, pulse }: { color: string; pulse: boolean }) {
   return (
     <span className="relative flex-shrink-0 flex mt-[5px]">
@@ -50,7 +47,6 @@ function Dot({ color, pulse }: { color: string; pulse: boolean }) {
   );
 }
 
-// ─── Skeleton loader ──────────────────────────────────────────────────
 function SkeletonRow() {
   return (
     <div className="flex items-start gap-4 p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30 animate-pulse">
@@ -63,7 +59,6 @@ function SkeletonRow() {
   );
 }
 
-// ─── Main Component ───────────────────────────────────────────────────
 export default function CurrentlySection() {
   const [repo, setRepo] = useState<GithubRepo | null>(null);
   const [loading, setLoading] = useState(true);
@@ -72,7 +67,6 @@ export default function CurrentlySection() {
   useEffect(() => {
     async function fetchLatestRepo() {
       try {
-        // fetch repos sorted by recently pushed
         const res = await fetch(
           `https://api.github.com/users/${GITHUB_USER}/repos?sort=pushed&direction=desc&per_page=5`,
           { next: { revalidate: 3600 } } // Next.js cache 1 jam
@@ -93,37 +87,26 @@ export default function CurrentlySection() {
     fetchLatestRepo();
   }, []);
 
-  // Build items list
   const staticItems: CurrentlyItem[] = [
     {
       color: "bg-blue-400",
       dotClass: "bg-blue-400",
       pulse: false,
       label: "Learning",
-      // Ganti dengan hal yang lagi kamu pelajari
-      value: "[Teknologi atau skill yang sedang kamu pelajari]",
-    },
-    {
-      color: "bg-amber-400",
-      dotClass: "bg-amber-400",
-      pulse: false,
-      label: "Reading",
-      // Ganti dengan buku/artikel yang lagi kamu baca
-      value: "[Buku atau artikel yang lagi kamu baca]",
+      value: "Golang, Python, TensorFlow, PyTorch",
     },
     {
       color: "bg-purple-400",
       dotClass: "bg-purple-400",
       pulse: false,
       label: "Open to",
-      value: "Freelance projects, collaborations, dan full-time opportunities",
+      value: "Freelance projects, collaborations, and full-time opportunities",
     },
   ];
 
   return (
     <div className="flex flex-col gap-3">
 
-      {/* ── Working on — dari GitHub ── */}
       {loading ? (
         <SkeletonRow />
       ) : error || !repo ? (

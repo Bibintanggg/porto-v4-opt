@@ -37,7 +37,7 @@ export default function Projects() {
         <section className="mt-8 w-full max-w-[1260px] mx-auto">
           <div className="flex items-center gap-2 mb-6">
             {/* Pin Icon */}
-           <PinIcon className="w-4 h-4 text-stone-500" />
+            <PinIcon className="w-4 h-4 text-stone-500" />
 
             <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
               Pinned Projects
@@ -133,11 +133,11 @@ export default function Projects() {
                   </p>
 
                   {/* Stack */}
-<div className="mt-4 flex flex-wrap gap-2">
-  {project.stack.map((tech, idx) => (
-    <span
-      key={idx}
-      className="
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.stack.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="
         rounded-full
         border border-stone-200
         dark:border-stone-700
@@ -148,11 +148,11 @@ export default function Projects() {
         bg-stone-100/60
         dark:bg-stone-800/50
       "
-    >
-      {tech}
-    </span>
-  ))}
-</div>
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -160,18 +160,18 @@ export default function Projects() {
         </section>
 
         {/* OTHER PROJECTS */}
-<section className="mt-14 w-full max-w-[1260px] mx-auto">
-  <div className="flex items-center gap-2 mb-6">
-    <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
-      Other Projects
-    </h2>
-  </div>
+        <section className="mt-14 w-full max-w-[1260px] mx-auto">
+          <div className="flex items-center gap-2 mb-6">
+            <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
+              Other Projects
+            </h2>
+          </div>
 
-  <section className="flex flex-wrap gap-6">
-    {otherProjects.map((project, index) => (
-      <div
-        key={index}
-        className="
+          <section className="flex flex-wrap gap-6">
+            {otherProjects.map((project, index) => (
+              <div
+                key={index}
+                className="
           group
           w-[400px]
           overflow-hidden
@@ -184,13 +184,13 @@ export default function Projects() {
           transition-all duration-300
           hover:-translate-y-1
         "
-      >
-        {/* Image */}
-        <div className="relative overflow-hidden m-4 rounded-xl">
-          <img
-            src={project.image}
-            alt={project.name}
-            className="
+              >
+                {/* Image */}
+                <div className="relative overflow-hidden m-4 rounded-xl">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="
               h-44
               w-full
               object-cover
@@ -198,11 +198,11 @@ export default function Projects() {
               group-hover:scale-105
               group-hover:blur-sm
             "
-          />
+                  />
 
-          {/* Overlay */}
-          <div
-            className="
+                  {/* Overlay */}
+                  <div
+                    className="
               absolute inset-0
               flex items-center justify-center
               bg-black/40
@@ -210,12 +210,12 @@ export default function Projects() {
               transition-all duration-300
               group-hover:opacity-100
             "
-          >
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
+                  >
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
                 flex items-center gap-2
                 rounded-full
                 border border-white/20
@@ -224,28 +224,28 @@ export default function Projects() {
                 text-sm font-medium text-white
                 backdrop-blur-md
               "
-            >
-              View Project
-            </a>
-          </div>
-        </div>
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
 
-        {/* Content */}
-        <div className="p-5 pt-1">
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
-            {project.name}
-          </h2>
+                {/* Content */}
+                <div className="p-5 pt-1">
+                  <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
+                    {project.name}
+                  </h2>
 
-          <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 line-clamp-3">
-            {project.description}
-          </p>
+                  <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 line-clamp-3">
+                    {project.description}
+                  </p>
 
-          {/* Stack */}
-          <div className="mt-4 flex flex-wrap gap-2">
-            {project.stack.map((tech, idx) => (
-              <span
-                key={idx}
-                className="
+                  {/* Stack */}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.stack.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="
                   rounded-full
                   border border-stone-200
                   dark:border-stone-700
@@ -256,16 +256,16 @@ export default function Projects() {
                   bg-stone-100/60
                   dark:bg-stone-800/50
                 "
-              >
-                {tech}
-              </span>
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
-          </div>
-        </div>
-      </div>
-    ))}
-  </section>
-</section>
+          </section>
+        </section>
       </main>
     </>
   );

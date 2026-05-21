@@ -199,36 +199,6 @@ export default function AboutContent() {
           <Divider />
 
           <section className="scroll-reveal mb-12">
-            <SectionLabel>How I Work</SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {values.map((v, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
-                    duration: 0.45,
-                    delay: i * 0.07,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30"
-                >
-                  <p className="text-[18px] mb-2">{v.emoji}</p>
-                  <p className="text-[13px] font-medium text-stone-700 dark:text-stone-300 mb-1.5">
-                    {v.title}
-                  </p>
-                  <p className="text-[12.5px] font-light leading-[1.8] text-stone-400 dark:text-stone-500">
-                    {v.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-          <Divider />
-
-          <section className="scroll-reveal mb-12">
             <SectionLabel>Currently</SectionLabel>
             <CurrentlySection />
           </section>

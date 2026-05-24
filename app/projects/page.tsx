@@ -1,11 +1,13 @@
 import { PROJECTS } from "@/src/data/project-data";
 import Noise from "@/src/interface/components/ui/Noise";
 import TopNav from "@/src/interface/layout/navbar/TopNav";
+import { PROJECT_TAGS_META } from "@/src/utils/tagLabel";
 import { ArrowUpRight, PinIcon } from "lucide-react";
 
 export default function Projects() {
   const pinnedProjects = PROJECTS.filter((p) => p.pinned);
   const otherProjects = PROJECTS.filter((p) => !p.pinned);
+
   return (
     <>
       <style>
@@ -36,7 +38,6 @@ export default function Projects() {
 
         <section className="mt-8 w-full max-w-[1260px] mx-auto">
           <div className="flex items-center gap-2 mb-6">
-            {/* Pin Icon */}
             <PinIcon className="w-4 h-4 text-stone-500" />
 
             <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
@@ -48,74 +49,38 @@ export default function Projects() {
             {pinnedProjects.map((project, index) => (
               <div
                 key={index}
-                className="
-          group
-          w-[400px]
-          overflow-hidden
-          rounded-2xl
-          border border-stone-200/70
-          dark:border-stone-800
-          bg-white/50
-          dark:bg-stone-900/40
-          backdrop-blur-xl
-          transition-all duration-300
-          hover:-translate-y-1
-        "
+                className="group w-[400px] overflow-hidden rounded-2xl border border-stone-200/70 dark:border-stone-800 bg-white/50 dark:bg-stone-900/40 backdrop-blur-xl
+                transition-all duration-300
+                hover:-translate-y-1"
               >
-                {/* Image */}
                 <div className="relative overflow-hidden m-4 rounded-xl">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="
-              h-44
-              w-full
-              object-cover
-              transition-all duration-500
-              group-hover:scale-105
-              group-hover:blur-sm
-            "
+                    className="h-44 w-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm "
                   />
 
-                  {/* PIN BADGE */}
-                  <div
-                    className="
-              absolute right-3 top-3
-              flex items-center gap-1
-              rounded-full
-              bg-black/50
-              px-3 py-1
-              text-xs text-white
-              backdrop-blur-md
-            "
-                  >
-                    <PinIcon className="w-4 h-4 text-red-200" />
-                    Pinned
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <span
+                      className={`rounded-full px-3 py-1 text-[11px] font-medium shadow-sm opacity-80 ${PROJECT_TAGS_META[project.tag].className}`}>
+                      {PROJECT_TAGS_META[project.tag].label}
+                    </span>
+
+                    <div
+                      className="flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white backdrop-blur-md"
+                    >
+                      <PinIcon className="w-4 h-4 text-red-200" />
+                      Pinned
+                    </div>
                   </div>
 
                   <div
-                    className="
-              absolute inset-0
-              flex items-center justify-center
-              bg-black/40
-              opacity-0
-              transition-all duration-300
-              group-hover:opacity-100
-            "
-                  >
+                    className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover:opacity-100">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                flex items-center gap-2
-                rounded-full
-                border border-white/20
-                bg-white/10
-                px-4 py-2
-                text-sm font-medium text-white
-                backdrop-blur-md
-              "
+                      className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-whitebackdrop-blur-md"
                     >
                       View Project
                     </a>
@@ -159,7 +124,6 @@ export default function Projects() {
           </section>
         </section>
 
-        {/* OTHER PROJECTS */}
         <section className="mt-14 w-full max-w-[1260px] mx-auto">
           <div className="flex items-center gap-2 mb-6">
             <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
@@ -185,7 +149,6 @@ export default function Projects() {
           hover:-translate-y-1
         "
               >
-                {/* Image */}
                 <div className="relative overflow-hidden m-4 rounded-xl">
                   <img
                     src={project.image}
@@ -200,7 +163,33 @@ export default function Projects() {
             "
                   />
 
-                  {/* Overlay */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <span
+                      className={`
+        rounded-full px-3 py-1 text-[11px] font-medium shadow-sm opacity-80 
+        ${PROJECT_TAGS_META[project.tag].className}
+      `}
+                    >
+                      {PROJECT_TAGS_META[project.tag].label}
+                    </span>
+
+                    {project.pinned && (
+                      <div
+                        className="
+          flex items-center gap-1
+          rounded-full
+          bg-black/50
+          px-3 py-1
+          text-xs text-white
+          backdrop-blur-md
+        "
+                      >
+                        <PinIcon className="w-4 h-4 text-red-200" />
+                        Pinned
+                      </div>
+                    )}
+                  </div>
+
                   <div
                     className="
               absolute inset-0
@@ -230,7 +219,6 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-5 pt-1">
                   <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
                     {project.name}

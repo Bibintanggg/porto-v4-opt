@@ -193,7 +193,7 @@ function ImageGallery({ images }: ImageGalleryProps) {
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
             onClick={() => setLightboxIndex(idx)}
-            className="relative w-[72px] h-[52px] sm:w-[88px] sm:h-[60px] rounded-lg overflow-hidden ring-1 ring-stone-200 dark:ring-stone-700 shadow-sm hover:shadow-md hover:ring-stone-400 dark:hover:ring-stone-500 transition-shadow duration-200 flex-shrink-0"
+            className="relative w-[72px] h-[52px] sm:w-[88px] sm:h-[60px] rounded-lg overflow-hidden ring-1 ring-stone-700 shadow-sm hover:shadow-md hover:ring-stone-500 transition-shadow duration-200 flex-shrink-0"
             aria-label={`Open image ${idx + 1}`}
           >
             <Image
@@ -213,7 +213,7 @@ function ImageGallery({ images }: ImageGalleryProps) {
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
             onClick={() => setLightboxIndex(VISIBLE_COUNT)}
-            className="relative w-[72px] h-[52px] sm:w-[88px] sm:h-[60px] rounded-lg overflow-hidden ring-1 ring-stone-200 dark:ring-stone-700 flex-shrink-0 flex items-center justify-center bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors duration-200 group"
+            className="relative w-[72px] h-[52px] sm:w-[88px] sm:h-[60px] rounded-lg overflow-hidden ring-1 ring-stone-700 flex-shrink-0 flex items-center justify-center bg-stone-800 hover:bg-stone-700 transition-colors duration-200 group"
             aria-label={`Show ${overflow} more images`}
           >
             <Image
@@ -223,7 +223,7 @@ function ImageGallery({ images }: ImageGalleryProps) {
               className="object-cover opacity-30 blur-[2px] scale-110"
               sizes="(max-width: 640px) 72px, 88px"
             />
-            <span className="relative z-10 text-[13px] font-semibold text-stone-600 dark:text-stone-300 group-hover:text-stone-800 dark:group-hover:text-white transition-colors">
+            <span className="relative z-10 text-[13px] font-semibold text-stone-300 group-hover:text-white transition-colors">
               +{overflow}
             </span>
           </motion.button>
@@ -253,28 +253,28 @@ export default function SectionExperience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="group p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30 hover:bg-white/60 dark:hover:bg-stone-900/50 transition-colors duration-300"
+            className="group p-5 rounded-xl border border-stone-800 bg-stone-900/30 hover:bg-stone-900/50 transition-colors duration-300"
           >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
               <div>
-                <p className="text-[14px] font-medium text-stone-800 dark:text-stone-200 leading-snug">
+                <p className="text-[14px] font-medium text-stone-200 leading-snug">
                   {exp.role}
                 </p>
-                <p className="text-[12.5px] text-stone-500 dark:text-stone-500">
+                <p className="text-[12.5px] text-stone-500">
                   {exp.company}
                 </p>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                <span className="text-[9.5px] tracking-[0.22em] uppercase text-stone-400 dark:text-stone-600">
+                <span className="text-[9.5px] tracking-[0.22em] uppercase text-stone-600">
                   {exp.period}
                 </span>
-                <span className="text-[9px] px-2 py-0.5 rounded-full border border-stone-200 dark:border-stone-800 text-stone-400 dark:text-stone-600 tracking-wide">
+                <span className="text-[9px] px-2 py-0.5 rounded-full border border-stone-800 text-stone-600 tracking-wide">
                   {exp.type}
                 </span>
               </div>
             </div>
 
-            <p className="text-[12.5px] font-light leading-[1.8] text-stone-500 dark:text-stone-400 mb-3">
+            <p className="text-[12.5px] font-light leading-[1.8] text-stone-400 mb-3">
               {exp.desc}
             </p>
 
@@ -282,16 +282,16 @@ export default function SectionExperience() {
               {exp.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10.5px] px-2 py-0.5 rounded-md bg-stone-100 dark:bg-stone-800/80 text-stone-500 dark:text-stone-500"
+                  className="text-[10.5px] px-2 py-0.5 rounded-md bg-stone-800/80 text-stone-500"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            {exp.image && exp.image.length > 0 && (
+            {/* {exp.image && exp.image.length > 0 && (
               <ImageGallery images={exp.image} />
-            )}
+            )} */}
           </motion.div>
         ))}
       </div>

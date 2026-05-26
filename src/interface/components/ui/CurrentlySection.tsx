@@ -49,11 +49,11 @@ function Dot({ color, pulse }: { color: string; pulse: boolean }) {
 
 function SkeletonRow() {
   return (
-    <div className="flex items-start gap-4 p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30 animate-pulse">
-      <span className="relative flex-shrink-0 mt-[5px] w-[6px] h-[6px] rounded-full bg-stone-200 dark:bg-stone-800" />
+    <div className="flex items-start gap-4 p-4 rounded-xl border border-stone-800 bg-stone-900/30 animate-pulse">
+      <span className="relative flex-shrink-0 mt-[5px] w-[6px] h-[6px] rounded-full bg-stone-800" />
       <div className="flex-1 space-y-2">
-        <div className="h-2.5 w-24 rounded bg-stone-200 dark:bg-stone-800" />
-        <div className="h-2 w-48 rounded bg-stone-100 dark:bg-stone-800/60" />
+        <div className="h-2.5 w-24 rounded bg-stone-800" />
+        <div className="h-2 w-48 rounded bg-stone-800/60" />
       </div>
     </div>
   );
@@ -111,13 +111,13 @@ export default function CurrentlySection() {
         <SkeletonRow />
       ) : error || !repo ? (
         // fallback kalau API gagal
-        <div className="flex items-start gap-4 p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30">
+        <div className="flex items-start gap-4 p-4 rounded-xl border border-stone-800 bg-stone-900/30">
           <Dot color="bg-emerald-500" pulse />
           <div>
-            <p className="text-[12px] font-medium text-stone-600 dark:text-stone-400 mb-0.5">
+            <p className="text-[12px] font-medium text-stone-400 mb-0.5">
               Working on
             </p>
-            <p className="text-[12.5px] font-light text-stone-500 dark:text-stone-500">
+            <p className="text-[12.5px] font-light text-stone-500">
               Something exciting — check back soon
             </p>
           </div>
@@ -130,31 +130,31 @@ export default function CurrentlySection() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="group flex items-start gap-4 p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30 hover:bg-white/60 dark:hover:bg-stone-900/50 hover:border-stone-300 dark:hover:border-stone-700 transition-all duration-300 cursor-pointer"
+          className="group flex items-start gap-4 p-4 rounded-xl border border-stone-800 bg-stone-900/30 hover:bg-stone-900/50 hover:border-stone-700 transition-all duration-300 cursor-pointer"
         >
           <Dot color="bg-emerald-500" pulse />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-              <p className="text-[12px] font-medium text-stone-600 dark:text-stone-400">
+              <p className="text-[12px] font-medium text-stone-400">
                 Working on
               </p>
               {/* badge "latest push" */}
-              <span className="text-[9px] tracking-[0.2em] uppercase px-1.5 py-0.5 rounded-md bg-stone-100 dark:bg-stone-800/80 text-stone-400 dark:text-stone-600">
+              <span className="text-[9px] tracking-[0.2em] uppercase px-1.5 py-0.5 rounded-md bg-stone-800/80 text-stone-600">
                 {timeAgo(repo.updated_at)}
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <p className="text-[13px] font-medium text-stone-700 dark:text-stone-300 truncate group-hover:text-stone-900 dark:group-hover:text-stone-100 transition-colors">
+              <p className="text-[13px] font-medium text-stone-300 truncate group-hover:text-stone-100 transition-colors">
                 {repo.name}
               </p>
-              <span className="text-stone-300 dark:text-stone-700 text-[10px] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-200">
+              <span className="text-stone-700 text-[10px] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-200">
                 ↗
               </span>
             </div>
 
             {repo.description && (
-              <p className="text-[12px] font-light text-stone-400 dark:text-stone-600 mt-0.5 truncate">
+              <p className="text-[12px] font-light text-stone-600 mt-0.5 truncate">
                 {repo.description}
               </p>
             )}
@@ -162,20 +162,20 @@ export default function CurrentlySection() {
             {/* language + stars */}
             <div className="flex items-center gap-3 mt-2">
               {repo.language && (
-                <span className="text-[10.5px] text-stone-400 dark:text-stone-600 flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-stone-300 dark:bg-stone-700 inline-block" />
+                <span className="text-[10.5px] text-stone-600 flex items-center gap-1">
+                  <span className="w-2 h-2 rounded-full bg-stone-700 inline-block" />
                   {repo.language}
                 </span>
               )}
               {repo.stargazers_count > 0 && (
-                <span className="text-[10.5px] text-stone-400 dark:text-stone-600 flex items-center gap-1">
+                <span className="text-[10.5px] text-stone-600 flex items-center gap-1">
                   ✦ {repo.stargazers_count}
                 </span>
               )}
               {repo.topics.slice(0, 3).map((t) => (
                 <span
                   key={t}
-                  className="text-[9.5px] px-1.5 py-0.5 rounded-md bg-stone-100 dark:bg-stone-800/60 text-stone-400 dark:text-stone-600"
+                  className="text-[9.5px] px-1.5 py-0.5 rounded-md bg-stone-800/60 text-stone-600"
                 >
                   {t}
                 </span>
@@ -192,14 +192,14 @@ export default function CurrentlySection() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.05 * (i + 1), ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-start gap-4 p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white/30 dark:bg-stone-900/30"
+          className="flex items-start gap-4 p-4 rounded-xl border border-stone-800 bg-stone-900/30"
         >
           <Dot color={item.dotClass} pulse={item.pulse} />
           <div>
-            <p className="text-[12px] font-medium text-stone-600 dark:text-stone-400 mb-0.5">
+            <p className="text-[12px] font-medium text-stone-400 mb-0.5">
               {item.label}
             </p>
-            <p className="text-[12.5px] font-light text-stone-500 dark:text-stone-500">
+            <p className="text-[12.5px] font-light text-stone-500">
               {item.value}
             </p>
           </div>

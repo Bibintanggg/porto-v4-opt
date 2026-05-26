@@ -22,15 +22,15 @@ export default function Projects() {
 
       <Noise />
 
-      <main className="relative z-10 flex flex-1 w-full flex-col py-14 px-6 md:px-10 lg:px-14 mx-auto">
+      <main className="relative z-10 flex flex-1 w-full flex-col py-14 px-6 md:px-10 lg:px-14 mx-auto bg-[#111010]">
         <TopNav />
 
         <section className="mt-10 w-full max-w-[1260px] mx-auto">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 dark:text-white">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
             Projects
           </h1>
 
-          <p className="mt-3 text-stone-500 dark:text-stone-400 max-w-2xl leading-relaxed">
+          <p className="mt-3 text-stone-400 max-w-2xl leading-relaxed">
             Here are some selected projects that I have worked on, focusing on
             UI/UX, frontend development, and fullstack apps.
           </p>
@@ -40,7 +40,7 @@ export default function Projects() {
           <div className="flex items-center gap-2 mb-6">
             <PinIcon className="w-4 h-4 text-stone-500" />
 
-            <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
+            <h2 className="text-lg font-semibold text-white">
               Pinned Projects
             </h2>
           </div>
@@ -49,7 +49,7 @@ export default function Projects() {
             {pinnedProjects.map((project, index) => (
               <div
                 key={index}
-                className="group w-[400px] overflow-hidden rounded-2xl border border-stone-200/70 dark:border-stone-800 bg-white/50 dark:bg-stone-900/40 backdrop-blur-xl
+                className="group w-[400px] overflow-hidden rounded-2xl border border-stone-800 bg-stone-900/40 backdrop-blur-xl
                 transition-all duration-300
                 hover:-translate-y-1"
               >
@@ -105,11 +105,11 @@ export default function Projects() {
 
                 {/* Content */}
                 <div className="p-5 pt-1">
-                  <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
+                  <h2 className="text-lg font-semibold text-white">
                     {project.name}
                   </h2>
 
-                  <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 line-clamp-3">
+                  <p className="mt-2 text-sm text-stone-400 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -120,14 +120,11 @@ export default function Projects() {
                         key={idx}
                         className="
         rounded-full
-        border border-stone-200
-        dark:border-stone-700
+        border border-stone-700
         px-2.5 py-1
         text-[11px]
-        text-stone-600
-        dark:text-stone-300
-        bg-stone-100/60
-        dark:bg-stone-800/50
+        text-stone-300
+        bg-stone-800/50
       "
                       >
                         {tech}
@@ -142,7 +139,7 @@ export default function Projects() {
 
         <section className="mt-14 w-full max-w-[1260px] mx-auto">
           <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
+            <h2 className="text-lg font-semibold text-white">
               Other Projects
             </h2>
           </div>
@@ -156,10 +153,8 @@ export default function Projects() {
           w-[400px]
           overflow-hidden
           rounded-2xl
-          border border-stone-200/70
-          dark:border-stone-800
-          bg-white/50
-          dark:bg-stone-900/40
+          border border-stone-800
+          bg-stone-900/40
           backdrop-blur-xl
           transition-all duration-300
           hover:-translate-y-1
@@ -236,11 +231,11 @@ export default function Projects() {
                 </div>
 
                 <div className="p-5 pt-1">
-                  <h2 className="text-lg font-semibold text-stone-900 dark:text-white">
+                  <h2 className="text-lg font-semibold text-white">
                     {project.name}
                   </h2>
 
-                  <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 line-clamp-3">
+                  <p className="mt-2 text-sm text-stone-400 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -250,14 +245,11 @@ export default function Projects() {
                         key={idx}
                         className="
                   rounded-full
-                  border border-stone-200
-                  dark:border-stone-700
+                  border border-stone-700
                   px-2.5 py-1
                   text-[11px]
-                  text-stone-600
-                  dark:text-stone-300
-                  bg-stone-100/60
-                  dark:bg-stone-800/50
+                  text-stone-300
+                  bg-stone-800/50
                 "
                       >
                         {tech}

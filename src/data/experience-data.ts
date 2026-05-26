@@ -16,10 +16,10 @@ export const experiences = [
       "MySQL",
       "Go",
     ],
-    image: [
-      '/assets/image/project/jawara.png',
-      '/assets/image/project/jawara.png'
-    ]
+    // image: [
+    //   '/assets/image/project/jawara.png',
+    //   '/assets/image/project/jawara.png'
+    // ]
   },
   {
     role: "Fullstack Web Developer Freelance",

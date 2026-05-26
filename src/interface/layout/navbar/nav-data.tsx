@@ -8,7 +8,7 @@ export const DEFAULT_ITEMS: NavLinkItem[] = [
     {
         label: "Resume",
         icon: <NewspaperIcon />,
-        href: "https://drive.google.com/file/d/1ZPPGFmGJTytVwUppRnjK-s6hVq2TeP-R/view?usp=sharing",
+        href: "/",
         isExternal: true,
     },
 ];

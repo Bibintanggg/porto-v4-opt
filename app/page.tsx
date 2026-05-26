@@ -91,18 +91,33 @@ export default function HomeContent() {
         className="relative flex flex-col flex-1 items-center justify-center bg-[#f7f5f1] dark:bg-[#111010] min-h-screen transition-colors duration-300"
       >
         <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
-          <div className="absolute rounded-full" style={{
-            width: 550, height: 550, top: "-10%", right: "-6%",
-            background: "radial-gradient(circle, #ddd9d0 0%, transparent 68%)",
-            filter: "blur(56px)", opacity: 0.45,
-            animation: "blobdrift 22s ease-in-out infinite",
-          }} />
-          <div className="absolute rounded-full" style={{
-            width: 420, height: 420, bottom: "8%", left: "-5%",
-            background: "radial-gradient(circle, #cdd4cf 0%, transparent 70%)",
-            filter: "blur(64px)", opacity: 0.28,
-            animation: "blobdrift 30s ease-in-out infinite reverse",
-          }} />
+          <div
+            className="absolute rounded-full"
+            style={{
+              width: 550,
+              height: 550,
+              top: "-10%",
+              right: "-6%",
+              background: "radial-gradient(circle, rgba(70,70,80,0.45) 0%, transparent 68%)",
+              filter: "blur(56px)",
+              opacity: 0.5,
+              animation: "blobdrift 22s ease-in-out infinite",
+            }}
+          />
+
+          <div
+            className="absolute rounded-full"
+            style={{
+              width: 420,
+              height: 420,
+              bottom: "8%",
+              left: "-5%",
+              background: "radial-gradient(circle, rgba(45,55,65,0.4) 0%, transparent 70%)",
+              filter: "blur(64px)",
+              opacity: 0.35,
+              animation: "blobdrift 30s ease-in-out infinite reverse",
+            }}
+          />
         </div>
 
         <main className="relative z-20 flex flex-1 w-full max-w-5xl flex-col py-14 px-12 lg:px-16">
@@ -298,97 +313,95 @@ export default function HomeContent() {
         </main>
       </div>
 
-      {/* Profile Modal */}
-      {/* Profile Modal */}
-{showProfile && (
-  <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
-    onClick={() => setShowProfile(false)}
-  >
-    <motion.div
-      initial={{ opacity: 0, y: 16, scale: 0.97 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 8, scale: 0.98 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
-      className="relative bg-white dark:bg-[#161514] border border-stone-200 dark:border-stone-800 rounded-2xl p-8 max-w-sm w-[90%] shadow-sm"
-      onClick={(e) => e.stopPropagation()}
-    >
-      {/* Close */}
-      <button
-        onClick={() => setShowProfile(false)}
-        className="absolute top-4 right-4 text-stone-300 dark:text-stone-700 hover:text-stone-600 dark:hover:text-stone-400 transition-colors text-lg leading-none"
-      >
-        ✕
-      </button>
-
-      <div className="flex flex-col items-center gap-3 mb-6">
-        <div className="w-[120px] h-[120px] rounded-full overflow-hidden border border-stone-200 dark:border-stone-800">
-          <Image
-            src="/assets/image/profile.jpg"
-            alt="Profile"
-            width={200}
-            height={200}
-            className="object-cover w-full h-full scale-200 origin-center"
-          />
-        </div>
-        <div className="text-center">
-          <p className="text-[15px] font-medium text-stone-900 dark:text-stone-50 leading-tight">
-            Bintang Yudha Putra Purnomo
-          </p>
-          <p className="text-[11px] text-stone-400 dark:text-stone-600 mt-1 tracking-wide">
-            Fullstack Developer · East Jakarta
-          </p>
-          <div className="flex items-center justify-center gap-2 mt-2">
-            <span className="relative flex h-[5px] w-[5px]">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50" />
-              <span className="relative inline-flex rounded-full h-[5px] w-[5px] bg-emerald-500" />
-            </span>
-            <span className="text-[9.5px] tracking-[0.26em] uppercase text-stone-400 dark:text-stone-600">
-              Available for work
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Bio */}
-      <p className="text-[12.5px] font-light leading-[1.85] text-stone-500 dark:text-stone-400 mb-5 text-center">
-        18 y/o fullstack developer specializing in modern web solutions — performance, functionality, and polished frontends with Next.js.
-      </p>
-
-      <div className="grid grid-cols-2 gap-2 mb-5">
-        {[
-          { n: "1+", l: "Year exp." },
-          { n: "15+", l: "Projects" },
-          { n: "Next.js", l: "Primary stack" },
-          { n: "Software Engineering", l: "Major" },
-        ].map((b) => (
-          <div key={b.l} className="bg-stone-50 dark:bg-stone-900/60 rounded-lg px-3 py-2.5">
-            <p className="text-[13px] font-medium text-stone-800 dark:text-stone-200 leading-none mb-1">{b.n}</p>
-            <p className="text-[9px] tracking-[0.28em] uppercase text-stone-400 dark:text-stone-600">{b.l}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center gap-6 border-t border-stone-100 dark:border-stone-800/70 pt-4">
-        {[
-          { label: "GitHub", href: `https://github.com/${GITHUB_USER}` },
-          { label: "Twitter", href: "https://x.com/Binnt8_" },
-          { label: "Email", href: "mailto:bintangyuda08@gmail.com" },
-        ].map((s) => (
-          <a
-            key={s.label}
-            href={s.href}
-            target="_blank"
-            rel="noreferrer"
-            className="text-[10px] tracking-[0.24em] uppercase text-stone-400 dark:text-stone-600 hover:text-stone-700 dark:hover:text-stone-400 transition-colors"
+      {showProfile && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+          onClick={() => setShowProfile(false)}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 16, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="relative bg-white dark:bg-[#161514] border border-stone-200 dark:border-stone-800 rounded-2xl p-8 max-w-sm w-[90%] shadow-sm"
+            onClick={(e) => e.stopPropagation()}
           >
-            {s.label}
-          </a>
-        ))}
-      </div>
-    </motion.div>
-  </div>
-)}
+            {/* Close */}
+            <button
+              onClick={() => setShowProfile(false)}
+              className="absolute top-4 right-4 text-stone-300 dark:text-stone-700 hover:text-stone-600 dark:hover:text-stone-400 transition-colors text-lg leading-none"
+            >
+              ✕
+            </button>
+
+            <div className="flex flex-col items-center gap-3 mb-6">
+              <div className="w-[120px] h-[120px] rounded-full overflow-hidden border border-stone-200 dark:border-stone-800">
+                <Image
+                  src="/assets/image/profile.jpg"
+                  alt="Profile"
+                  width={200}
+                  height={200}
+                  className="object-cover w-full h-full scale-200 origin-center"
+                />
+              </div>
+              <div className="text-center">
+                <p className="text-[15px] font-medium text-stone-900 dark:text-stone-50 leading-tight">
+                  Bintang Yudha Putra Purnomo
+                </p>
+                <p className="text-[11px] text-stone-400 dark:text-stone-600 mt-1 tracking-wide">
+                  Fullstack Developer · East Jakarta
+                </p>
+                <div className="flex items-center justify-center gap-2 mt-2">
+                  <span className="relative flex h-[5px] w-[5px]">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50" />
+                    <span className="relative inline-flex rounded-full h-[5px] w-[5px] bg-emerald-500" />
+                  </span>
+                  <span className="text-[9.5px] tracking-[0.26em] uppercase text-stone-400 dark:text-stone-600">
+                    Available for work
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bio */}
+            <p className="text-[12.5px] font-light leading-[1.85] text-stone-500 dark:text-stone-400 mb-5 text-center">
+              18 y/o fullstack developer specializing in modern web solutions — performance, functionality, and polished frontends with Next.js.
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 mb-5">
+              {[
+                { n: "1+", l: "Year exp." },
+                { n: "15+", l: "Projects" },
+                { n: "Next.js", l: "Primary stack" },
+                { n: "Software Engineering", l: "Major" },
+              ].map((b) => (
+                <div key={b.l} className="bg-stone-50 dark:bg-stone-900/60 rounded-lg px-3 py-2.5">
+                  <p className="text-[13px] font-medium text-stone-800 dark:text-stone-200 leading-none mb-1">{b.n}</p>
+                  <p className="text-[9px] tracking-[0.28em] uppercase text-stone-400 dark:text-stone-600">{b.l}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center gap-6 border-t border-stone-100 dark:border-stone-800/70 pt-4">
+              {[
+                { label: "GitHub", href: `https://github.com/${GITHUB_USER}` },
+                { label: "Twitter", href: "https://x.com/Binnt8_" },
+                { label: "Email", href: "mailto:bintangyuda08@gmail.com" },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[10px] tracking-[0.24em] uppercase text-stone-400 dark:text-stone-600 hover:text-stone-700 dark:hover:text-stone-400 transition-colors"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      )}
     </>
   );
 }

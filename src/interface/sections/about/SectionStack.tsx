@@ -30,16 +30,16 @@ export default function SectionStack() {
               "React",
               "TypeScript",
               "Tailwind CSS",
-              "Framer Motion",
+              "ShadCn UI",
             ],
           },
           {
             cat: "Backend",
-            items: ["Node.js", "Express", "PostgreSQL", "Prisma", "REST API"],
+            items: ["PostgreSQL", "Laravel", "Go (Beginner)", "MySQL"],
           },
           {
             cat: "Tools & Others",
-            items: ["Git", "Docker", "Figma", "Vercel", "Linux"],
+            items: ["Git", "Docker", "Figma", "Vercel", "Kali Linux", "Table Plus", "Postman"],
           },
         ].map((group) => (
           <div

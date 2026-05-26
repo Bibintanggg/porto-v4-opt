@@ -111,39 +111,39 @@ export default function AboutContent() {
         ref={rootRef}
         className="relative flex flex-col flex-1 items-center bg-[#f7f5f1] dark:bg-[#111010] min-h-screen transition-colors duration-300"
       >
-        {/* Ambient blobs — sama persis kayak home */}
         <div
           aria-hidden
           className="pointer-events-none fixed inset-0 overflow-hidden"
         >
-          <div
-            className="absolute rounded-full"
-            style={{
-              width: 550,
-              height: 550,
-              top: "-10%",
-              right: "-6%",
-              background:
-                "radial-gradient(circle, #ddd9d0 0%, transparent 68%)",
-              filter: "blur(56px)",
-              opacity: 0.45,
-              animation: "blobdrift 22s ease-in-out infinite",
-            }}
-          />
-          <div
-            className="absolute rounded-full"
-            style={{
-              width: 420,
-              height: 420,
-              bottom: "8%",
-              left: "-5%",
-              background:
-                "radial-gradient(circle, #cdd4cf 0%, transparent 70%)",
-              filter: "blur(64px)",
-              opacity: 0.28,
-              animation: "blobdrift 30s ease-in-out infinite reverse",
-            }}
-          />
+          <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: 550,
+                height: 550,
+                top: "-10%",
+                right: "-6%",
+                background: "radial-gradient(circle, rgba(70,70,80,0.45) 0%, transparent 68%)",
+                filter: "blur(56px)",
+                opacity: 0.5,
+                animation: "blobdrift 22s ease-in-out infinite",
+              }}
+            />
+
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: 420,
+                height: 420,
+                bottom: "8%",
+                left: "-5%",
+                background: "radial-gradient(circle, rgba(45,55,65,0.4) 0%, transparent 70%)",
+                filter: "blur(64px)",
+                opacity: 0.35,
+                animation: "blobdrift 30s ease-in-out infinite reverse",
+              }}
+            />
+          </div>
         </div>
 
         <main className="relative z-20 flex flex-1 w-full max-w-5xl flex-col py-14 px-12 lg:px-16">

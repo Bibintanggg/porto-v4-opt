@@ -2,7 +2,7 @@ import { PROJECTS } from "@/src/data/project-data";
 import Noise from "@/src/interface/components/ui/Noise";
 import TopNav from "@/src/interface/layout/navbar/TopNav";
 import { PROJECT_TAGS_META } from "@/src/utils/tagLabel";
-import { ArrowUpRight, PinIcon } from "lucide-react";
+import { ArrowUpRight, LockIcon, PinIcon } from "lucide-react";
 
 export default function Projects() {
   const pinnedProjects = PROJECTS.filter((p) => p.pinned);
@@ -74,17 +74,33 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div
-                    className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-whitebackdrop-blur-md"
-                    >
-                      View Project
-                    </a>
-                  </div>
+                  {project.lock ? (
+                    <div
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      <button
+                        disabled
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-whitebackdrop-blur-md"
+                      >
+                        <div className="flex items-center justify-center gap-3">
+                          <span><LockIcon size={15} /></span>
+                          Private Project Repository
+                        </div>
+                      </button>
+                    </div>
+                  ) : (
+                    <div
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-whitebackdrop-blur-md"
+                      >
+                        View Project
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -190,33 +206,33 @@ export default function Projects() {
                     )}
                   </div>
 
-                  <div
-                    className="
-              absolute inset-0
-              flex items-center justify-center
-              bg-black/40
-              opacity-0
-              transition-all duration-300
-              group-hover:opacity-100
-            "
-                  >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                flex items-center gap-2
-                rounded-full
-                border border-white/20
-                bg-white/10
-                px-4 py-2
-                text-sm font-medium text-white
-                backdrop-blur-md
-              "
-                    >
-                      View Project
-                    </a>
-                  </div>
+                  {project.lock ? (
+                    <div
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      <button
+                        disabled
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-whitebackdrop-blur-md"
+                      >
+                        <div className="flex items-center justify-center gap-3">
+                          <span><LockIcon size={15} /></span>
+                          Private Project Repository
+                        </div>
+                      </button>
+                    </div>
+                  ) : (
+                    <div
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-whitebackdrop-blur-md"
+                      >
+                        View Project
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-5 pt-1">
@@ -228,7 +244,6 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  {/* Stack */}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.stack.map((tech, idx) => (
                       <span

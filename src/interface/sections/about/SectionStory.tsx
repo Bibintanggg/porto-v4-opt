@@ -7,31 +7,18 @@ export default function SectionStory() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <p className="text-[13.5px] font-light leading-[1.9] text-stone-500 dark:text-stone-400">
-            My journey in programming started from curiosity about how websites
-            and applications actually work behind the scenes. What began as
-            small experiments quickly turned into something I genuinely enjoyed,
-            and since then, I’ve been continuously learning and building.
+            My journey into the world of programming began with a profound curiosity about technology. I see the world of technology as challenging and constantly evolving, and as someone who loves challenges, this sparked my interest in programming.
           </p>
           <p className="text-[13.5px] font-light leading-[1.9] text-stone-500 dark:text-stone-400">
-            I’m especially interested in full stack development because I like
-            having full control over the products I create from designing
-            database structures to crafting smooth frontend interactions. Every
-            layer brings different challenges that keep me excited to learn
-            more.
+            Early on, I learned a lot on my own through documentation, videos, and hands-on practice building small projects. From there, I began to understand how applications are built, how logic works, and how technology can be used to solve various problems.
           </p>
         </div>
         <div className="space-y-4">
           <p className="text-[13.5px] font-light leading-[1.9] text-stone-500 dark:text-stone-400">
-            Currently, I’m studying Software Engineering while actively working
-            on personal projects and freelance work. I believe combining
-            analytical thinking with creativity helps build better and more
-            meaningful digital experiences.
+            Over time, this interest developed into real-world experience through various freelance projects and team collaborations. I've been involved in developing projects for the banking sector, education, company profile logistics, and even an advertising captive portal system. From these experiences, I learned not only technical skills, but also communication, problem-solving, and how to build applications that users actually use.
           </p>
           <p className="text-[13.5px] font-light leading-[1.9] text-stone-500 dark:text-stone-400">
-            Outside of coding, I enjoy exploring tech trends, listening to
-            music, and spending time refining ideas and interfaces. Sometimes,
-            the best solutions come when stepping away from the screen for a
-            moment.
+            I currently focus on modern web development using Next.js, React, TypeScript, and Laravel, and continue to learn to improve my skills in full-stack web development.
           </p>
         </div>
       </div>
